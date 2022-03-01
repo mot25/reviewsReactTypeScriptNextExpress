@@ -6,8 +6,11 @@ export default function Home(): JSX.Element {
   return (
     <>
       <Htag tag="h1">titel</Htag>
-      <Button className='4534545343245' mode="primary">tesdthd</Button>
+      <Button arrow="right" mode="primary">
+        tesdthd
+      </Button>
       <Button
+        arrow="down"
         mode="ghost"
         onClick={() => {
           console.log("wergawegere");

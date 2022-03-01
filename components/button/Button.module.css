@@ -5,7 +5,6 @@
   padding: 11px;
   transition: all 0.3s;
   font-size: 14px;
-  
 }
 
 .primary {
@@ -14,6 +13,7 @@
   border-radius: 5px;
   color: var(--white);
 }
+
 .primary:hover {
   background: var(--primary-hover);
 }
@@ -23,7 +23,18 @@
   border: 1px solid var(--gray);
   border-radius: 5px;
 }
+
 .ghost:hover {
   background: var(--primary);
   color: var(--white);
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.down {
+  transform: rotate(90deg);
+  transition: all 0.3s;
 }
