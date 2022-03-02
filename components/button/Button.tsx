@@ -4,14 +4,15 @@ import styles from "./Button.module.css";
 import cn from "classNames";
 
 export default function Button({
-  children,
   mode,
   className,
+  children,
   ...props
 }: ButtonProps): JSX.Element {
   return (
     <button
-      className={cn(styles.button, {
+    // {...props.className}
+      className={cn(styles.button, className, {
         [styles.primary]: mode == "primary",
         [styles.ghost]: mode == "ghost",
       })}
