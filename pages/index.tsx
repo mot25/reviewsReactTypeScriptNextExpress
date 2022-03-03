@@ -4,8 +4,9 @@ import Htag from "../components/Htag/Htag";
 import Paragraf from "../components/paragraf/Paragraf";
 import Rating from "../components/Rating/Rating";
 import Tag from "../components/tag/Tag";
+import Layout, { withLayout } from "../layout/Layout";
 
-export default function Home(): JSX.Element {
+function Home(): JSX.Element {
   const [rat, setRating] = useState<number>(4);
 
   return (
@@ -50,3 +51,5 @@ export default function Home(): JSX.Element {
     </>
   );
 }
+
+export default withLayout(Home);
