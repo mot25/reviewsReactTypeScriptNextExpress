@@ -4,7 +4,7 @@ import Htag from "../components/Htag/Htag";
 import Paragraf from "../components/paragraf/Paragraf";
 import Rating from "../components/Rating/Rating";
 import Tag from "../components/tag/Tag";
-import Layout, { withLayout } from "../layout/Layout";
+import { withLayout } from "../layout/Layout";
 
 function Home(): JSX.Element {
   const [rat, setRating] = useState<number>(4);
@@ -22,24 +22,6 @@ function Home(): JSX.Element {
       >
         tesdthd
       </Button>
-      <Paragraf mode="s">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
-        cupiditate facilis voluptatem repudiandae fuga quia, quam adipisci vel
-        ullam laborum sapiente quibusdam fugit. Dolores rerum, esse repudiandae
-        quo commodi atque?
-      </Paragraf>
-      <Paragraf mode="r">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
-        cupiditate facilis voluptatem repudiandae fuga quia, quam adipisci vel
-        ullam laborum sapiente quibusdam fugit. Dolores rerum, esse repudiandae
-        quo commodi atque?
-      </Paragraf>
-      <Paragraf mode="b">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
-        cupiditate facilis voluptatem repudiandae fuga quia, quam adipisci vel
-        ullam laborum sapiente quibusdam fugit. Dolores rerum, esse repudiandae
-        quo commodi atque?
-      </Paragraf>
       <Tag color="ghost">ghost</Tag>
       <Tag color="red">red</Tag>
       <Tag color="grey">grey</Tag>
