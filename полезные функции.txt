@@ -1,1 +1,2 @@
 _document.tsx
+switch star rating with space and tab

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { KeyboardEvent, useEffect, useState } from "react";
 import cn from "classnames";
 import { RatingProps } from "./Rating.Props";
 import style from "./Rating.module.css";
 import StarIcon from "./Star.svg";
+import { serialize } from "v8";
 
 export default function Rating({
   isEditable = false,
@@ -22,15 +23,45 @@ export default function Rating({
   const constructorRating = (currentRating: number) => {
     const updateArray = ratingArray.map((r: JSX.Element, i: number) => {
       return (
-        <StarIcon
+        <span
           key={i}
           className={cn(style.ster, className, {
             [style.filled]: i < currentRating,
+            [style.editable]: isEditable,
           })}
-        />
+          onMouseEnter={() => changeDisplay(i + 1)}
+          onMouseLeave={() => changeDisplay(rating)}
+          onClick={() => onClick(i + 1)}
+        >
+          <StarIcon
+            tabIndex={isEditable ? 0 : -1}
+            onKeyDown={(e: KeyboardEvent<SVGElement>) =>
+              isEditable && handleSpace(i + 1, e)
+            }
+          />
+        </span>
       );
     });
     setRatingArray(updateArray);
+  };
+
+  const changeDisplay = (i: number) => {
+    if (isEditable) {
+      constructorRating(i);
+    }
+  };
+
+  const onClick = (i: number) => {
+    if (isEditable && setRating) {
+      setRating(i);
+    }
+  };
+
+  const handleSpace = (i: number, e: KeyboardEvent<SVGElement>) => {
+    if (e.code != "Space" || !setRating) {
+      return;
+    }
+    setRating(i);
   };
 
   return (
