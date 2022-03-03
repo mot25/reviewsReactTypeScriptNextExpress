@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { HtagProps } from "./Htag.props";
 import styles from "./Htag.module.css";
 
 export default function Htag({ tag, children }: HtagProps): JSX.Element {
+            
+
   switch (tag) {
     case "h1":
       return <h1 className={styles.h1}>{children}</h1>;

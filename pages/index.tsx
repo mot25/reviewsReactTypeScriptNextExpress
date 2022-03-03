@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../components/button/Button";
 import Htag from "../components/Htag/Htag";
 import Paragraf from "../components/paragraf/Paragraf";
+import Rating from "../components/Rating/Rating";
 import Tag from "../components/tag/Tag";
 
 export default function Home(): JSX.Element {
@@ -41,6 +42,7 @@ export default function Home(): JSX.Element {
       <Tag color="grey">grey</Tag>
       <Tag color="green">green</Tag>
       <Tag href='#' color="primary">primary</Tag>
+      <Rating rating={10} />
     </>
   );
 }
